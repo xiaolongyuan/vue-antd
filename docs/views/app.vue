@@ -1,8 +1,9 @@
 <template>
-<header id="header" class="clearfix">
+<div>
+<header class="clearfix">
   <a class="logo" href="..">
-    <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
-    Vue Antd
+    <img width="50" src="http://s2.upload.tf/Hbv.png">
+    <span>Vue Antd<span>
   </a>
   <nav class="nav">
     <ul>
@@ -19,6 +20,7 @@
   </nav>
 </header>
 <router-view class="view"></router-view>
+</div>
 </template>
 
 <script>
@@ -69,7 +71,6 @@ a.logo {
   line-height: 46px;
   margin: 17px 48px 17px 40px;
   transition: margin 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s, width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s, height 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  text-transform: uppercase;
   font-size: 18px;
   font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",sans-serif;
   color: #6EB4E0;
@@ -77,8 +78,7 @@ a.logo {
 
 .logo img {
   float: left;
-  margin-top: -7px;
-  -webkit-animation: rotateCircleBack 0.6s 1 ease-in-out;
+  margin-right: 15px;
   animation: rotateCircleBack 0.6s 1 ease-in-out;
 }
 
@@ -121,5 +121,31 @@ a.logo {
   background: #6EB4E0;
   display: none;
 }
+
+@-webkit-keyframes rotateCircleBack {
+  0% {
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: rotate(360deg);
+  }
+
+  100% {
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+
+@keyframes rotateCircleBack {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+  }
+}
+
 
 </style>

@@ -26,9 +26,11 @@ Table 有两种模式，本地数据和远程数据模式。
 
 
 ## 组件演示
-<div>
-  <v-table :columns="columns" :data-source="dataSource"></v-table>
-</div>
+<demo>
+  <example title="简单实用">
+    <v-table :columns="columns" :data-source="dataSource"></v-table>
+  </example>
+</demo>
 
 
 ## API
@@ -74,7 +76,7 @@ Table 有两种模式，本地数据和远程数据模式。
 </template>
 
 <script>
-import vTable from '../../src/components/table'
+import vTable from '../../components/table'
 
 export default {
   data () {
@@ -84,36 +86,39 @@ export default {
         dataIndex: 'name'
       }, {
         title: '年龄',
-        dataIndex: 'age'
+        dataIndex: 'age',
+        render: (text, record) => {
+          return `<a href="javascript:;">${text}</a>`
+        }
       }, {
         title: '住址',
         dataIndex: 'address'
       }, {
         title: '操作',
         dataIndex: '',
-        render: (text, record) => {
-          return `<span :class="{'item', true}">
-            <a href="javascript:;" @click="edit">编辑</a>
-            <span class="ant-divider"></span>
-            <a href="javascript:;" @click="del">删除</a>
-          </span>`
+        render: (text, record, index) => {
+          return `<span class="item">
+                    <a href="javascript:;" @click="edit('${record.name}')">编辑</a>
+                    <span class="ant-divider"></span>
+                    <a href="javascript:;" @click="del('${record.name}')">删除</a>
+                  </span>`
         }
       }],
       dataSource: [{
         key: '1',
-        name: '胡彦斌',
-        age: 32,
+        name: 'LISAN',
+        age: 31,
         address: '西湖区湖底公园1号'
       }, {
         key: '2',
         name: '胡彦祖',
         age: 42,
-        address: '西湖区湖底公园1号'
+        address: '西湖区湖底公园2号'
       }, {
         key: '3',
         name: '李大嘴',
-        age: 32,
-        address: '西湖区湖底公园1号'
+        age: 54,
+        address: '西湖区湖底公园3号'
       }]
     }
   },
@@ -125,12 +130,12 @@ export default {
   },
 
   methods: {
-    edit () {
-      alert('edit');
+    edit (name) {
+      alert('编辑#名字#' + name)
     },
 
-    del () {
-      alert('del');
+    del (name) {
+       alert('删除#名字#' + name)
     }
   }
 

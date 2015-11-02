@@ -16,6 +16,10 @@ export function configRouter (router) {
           component: require('../views/docs/download.vue')
         },
 
+        'affix': {
+          component: require('../components/affix.vue')
+        },
+
         'alert': {
           component: require('../components/alert.vue')
         },
@@ -40,6 +44,18 @@ export function configRouter (router) {
           component: require('../components/iconfont.vue')
         },
 
+        'input-number': {
+          component: require('../components/input-number.vue')
+        },
+
+        'layout': {
+          component: require('../components/layout.vue')
+        },
+
+        'progress': {
+          component: require('../components/progress.vue')
+        },
+
         'upload': {
           component: require('../components/upload.vue')
         },
@@ -52,12 +68,20 @@ export function configRouter (router) {
           component: require('../components/radio.vue')
         },
 
+        'select': {
+          component: require('../components/select.vue')
+        },
+
         'switch': {
           component: require('../components/switch.vue')
         },
 
         'steps': {
           component: require('../components/steps.vue')
+        },
+
+        'spin': {
+          component: require('../components/spin.vue')
         },
 
         'table': {

@@ -82,11 +82,11 @@ export default {
           {
             name: 'iconfont',
             desc: '字体图标'
+          },
+          {
+            name: 'layout',
+            desc: '布局'
           }
-          // {
-          //   name: 'layout',
-          //   desc: '布局'
-          // }
         ],
         form: [
           {
@@ -101,18 +101,18 @@ export default {
           //   name: 'form',
           //   desc: '表单'
           // },
-          // {
-          //   name: 'input-number',
-          //   desc: '数字输入框'
-          // },
+          {
+            name: 'input-number',
+            desc: '数字输入框'
+          },
           {
             name: 'radio',
             desc: '单选框'
           },
-          // {
-          //   name: 'select',
-          //   desc: '选择器'
-          // },
+          {
+            name: 'select',
+            desc: '选择器'
+          },
           // {
           //   name: 'slider',
           //   desc: '滑动输入条'
@@ -171,17 +171,21 @@ export default {
           //   name: 'popover',
           //   desc: '气泡卡片'
           // },
-          // {
-          //   name: 'progress',
-          //   desc: '进度条'
-          // },
-          // {
-          //   name: 'table',
-          //   desc: '表格'
-          // },
+          {
+            name: 'progress',
+            desc: '进度条'
+          },
+          {
+            name: 'table',
+            desc: '表格'
+          },
           {
             name: 'tag',
             desc: '标签'
+          },
+          {
+            name: 'spin',
+            desc: '加载动画'
           }
           // {
           //   name: 'timeline',
@@ -219,10 +223,10 @@ export default {
           // }
         ],
         other: [
-          // {
-          //   name: 'affix',
-          //   desc: '固钉'
-          // },
+          {
+            name: 'affix',
+            desc: '固钉'
+          }
           // {
           //   name: 'enter-animation',
           //   desc: '进场动画'

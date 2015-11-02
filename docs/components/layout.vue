@@ -1,9 +1,5 @@
-# Layout
-
-- category: Components
-- chinese: 布局
-- type: 基本
-- cols: 1
+<template lang="md">
+# Layout 布局
 
 ---
 
@@ -77,6 +73,133 @@
 
 Flex 布局是基于 24 栅格来定义每一个“盒子”的宽度，但排版则不拘泥于栅格。
 
+## 组件演示
+
+<demo>
+  <example title="基础布局">
+    <v-row>
+      <v-col span="12">.col-12</v-col>
+      <v-col span="12">.col-12</v-col>
+    </v-row>
+    <v-row class="testRowClassName">
+      <v-col span="8">.col-8</v-col>
+      <v-col span="8">.col-8</v-col>
+      <v-col span="8" class="testColClassName">.col-8</v-col>
+    </v-row>
+    <v-row>
+      <v-col span="6">.col-6</v-col>
+      <v-col span="6">.col-6</v-col>
+      <v-col span="6">.col-6</v-col>
+      <v-col span="6">.col-6</v-col>
+    </v-row>
+  </example>
+  <example title="左右偏移">
+    <v-row>
+      <v-col span="8">.col-8</v-col>
+      <v-col span="8" offset="8">.col-8</v-col>
+    </v-row>
+    <v-row>
+      <v-col span="6" offset="6">.col-6 .col-offset-6</v-col>
+      <v-col span="6" offset="6">.col-6 .col-offset-6</v-col>
+    </v-row>
+    <v-row>
+      <v-col span="12" offset="6">.col-12 .col-offset-6</v-col>
+    </v-row>
+  </example>
+  <example title="布局排序">
+    <v-row>
+      <v-col span="18" push="6">.col-18 .col-push-6</v-col>
+      <v-col span="6" pull="18">.col-6 .col-pull-18</v-col>
+    </v-row>
+  </example>
+  <example title="Flex布局">
+    <p>子元素居左排列</p>
+    <v-row type="flex" justify="start">
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+    </v-row>
+
+    <p>子元素居中排列</p>
+    <v-row type="flex" justify="center">
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+    </v-row>
+
+    <p>子元素居右排列</p>
+    <v-row type="flex" justify="end">
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+    </v-row>
+
+    <p>子元素等宽排列</p>
+    <v-row type="flex" justify="space-between">
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+    </v-row>
+
+    <p>子元素分散对齐</p>
+    <v-row type="flex" justify="space-around">
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+      <v-col span="4">.col-4</v-col>
+    </v-row>
+  </example>
+  <example title="Flex对齐">
+    <p>顶部对齐</p>
+    <v-row type="flex" justify="center" align="top">
+      <v-col span="4"><p style="height: 100px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 50px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 120px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 80px">.col-4</p></v-col>
+    </v-row>
+
+    <p>居中对齐</p>
+    <v-row type="flex" justify="space-around" align="middle">
+      <v-col span="4"><p style="height: 100px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 50px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 120px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 80px">.col-4</p></v-col>
+    </v-row>
+
+    <p>底部对齐</p>
+    <v-row type="flex" justify="space-between" align="bottom">
+      <v-col span="4"><p style="height: 100px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 50px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 120px">.col-4</p></v-col>
+      <v-col span="4"><p style="height: 80px">.col-4</p></v-col>
+    </v-row>
+  </example>
+  <example title="Flex排序">
+    <v-row  type="flex">
+      <v-col span="6" order="4">1 col-order-4</v-col>
+      <v-col span="6" order="3">2 col-order-3</v-col>
+      <v-col span="6" order="2">3 col-order-2</v-col>
+      <v-col span="6" order="1">4 col-order-1</v-col>
+    </v-row >
+  </example>
+</demo>
+</template>
+
+<script>
+import { vRow, vCol } from '../../components/layout'
+
+export default {
+
+  components: { vRow, vCol }
+
+}
+
+</script>
+
 <style>
 .demo-row {
     background-image: linear-gradient(90deg, #F5F5F5 4.16666667%, transparent 4.16666667%, transparent 8.33333333%, #F5F5F5 8.33333333%, #F5F5F5 12.5%,  transparent 12.5%, transparent 16.66666667%, #F5F5F5 16.66666667%, #F5F5F5 20.83333333%, transparent 20.83333333%, transparent 25%, #F5F5F5 25%, #F5F5F5 29.16666667%, transparent 29.16666667%, transparent 33.33333333%, #F5F5F5 33.33333333%, #F5F5F5 37.5%, transparent 37.5%, transparent 41.66666667%, #F5F5F5 41.66666667%, #F5F5F5 45.83333333%, transparent 45.83333333%, transparent 50%, #F5F5F5 50%, #F5F5F5 54.16666667%, transparent 54.16666667%, transparent 58.33333333%, #F5F5F5 58.33333333%, #F5F5F5 62.5%, transparent 62.5%, transparent 66.66666667%, #F5F5F5 66.66666667%, #F5F5F5 70.83333333%,  transparent 70.83333333%, transparent 75%, #F5F5F5 75%, #F5F5F5 79.16666667%, transparent 79.16666667%, transparent 83.33333333%, #F5F5F5 83.33333333%, #F5F5F5 87.5%, transparent 87.5%, transparent 91.66666667%, #F5F5F5 91.66666667%, #F5F5F5 95.83333333%, transparent 95.83333333%);
@@ -136,5 +259,11 @@ Flex 布局是基于 24 栅格来定义每一个“盒子”的宽度，但排�
 }
 .hight-80 {
   height: 80px;
+}
+.testRowClassName {
+    background: #f0f0f0;
+}
+div.testColClassName {
+    background: rgba(24, 115, 216, 0.9);
 }
 </style>

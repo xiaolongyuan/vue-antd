@@ -6,9 +6,11 @@
 这里是 Ant Design 的 Vue 实现，开发和服务于企业级后台产品。
 
 <div class="pic-plus">
-  <img width="150" src="https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg">
-  <span>+</span>
   <img width="150" src="../../styles/images/vue.png">
+  <span>+</span>
+  <img width="150" src="https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg">
+  <span>=</span>
+  <img width="150" src="http://s2.upload.tf/Gbv.png">
 </div>
 <style>
 .pic-plus > * {
@@ -48,5 +50,5 @@
 
 ## 如何贡献
 
-我们欢迎任何形式的贡献，有任何建议或意见您可以进行 [Pull Request](https://github.com/okoala/vue-antd/pulls)，或者给我们[提问](https://github.com/ant-design/ant-design/issues)。
+我们欢迎任何形式的贡献，有任何建议或意见您可以进行 [Pull Request](https://github.com/okoala/vue-antd/pulls)，或者给我们[提问](https://github.com/okoala/vue-antd/issues)。
 </template>
