@@ -131,10 +131,10 @@ export default {
           // }
         ],
         show: [
-          // {
-          //   name: 'alert',
-          //   desc: '警告提示'
-          // },
+          {
+            name: 'alert',
+            desc: '警告提示'
+          },
           {
             name: 'badge',
             desc: '徽标数'
@@ -226,11 +226,11 @@ export default {
           {
             name: 'affix',
             desc: '固钉'
+          },
+          {
+            name: 'queue-anim',
+            desc: '进场动画'
           }
-          // {
-          //   name: 'enter-animation',
-          //   desc: '进场动画'
-          // }
         ]
       }
     }
@@ -418,7 +418,6 @@ export default {
   font-family: Consolas, monospace;
 }
 
-.markdown p,
 .markdown pre {
   margin: 1.2em 0;
   padding: 1em;

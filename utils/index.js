@@ -1,6 +1,7 @@
 import velocity from 'velocity-animate'
 import isPlainObject from 'lodash.isplainobject'
 import _KeyCode from './KeyCode'
+import _guid from './guid'
 
 const toString = Object.prototype.toString
 
@@ -30,6 +31,7 @@ function animate (node, show, transitionName, done) {
   }
 }
 
+export const guid = _guid
 export const KeyCode = _KeyCode
 export const openAnimation = {
   enter (node, done) {
@@ -77,13 +79,11 @@ export function defaultProps (props) {
 export function oneOfType (validList, defaultValue) {
   let validaObj = {}
 
-  if (defaultValue != null) {
-    validaObj.default = defaultValue
-  }
-
+  validaObj.default = defaultValue
   validaObj.validator = function (value) {
-    for (let i = 0; i < validList.length; i++) {
-      if (toString.call(value).indexOf(validList[i].name) > -1) {
+    for (let j = 0; j < validList.length; j++) {
+      const validName = validList[j].name
+      if (toString.call(value).indexOf(validName) > -1) {
         return true
       }
     }
@@ -96,13 +96,10 @@ export function oneOfType (validList, defaultValue) {
 export function oneOf (validList, defaultValue) {
   let validaObj = {}
 
-  if (defaultValue != null) {
-    validaObj.default = defaultValue
-  }
-
+  validaObj.default = defaultValue
   validaObj.validator = function (value) {
-    for (let i = 0; i < validList.length; i++) {
-      if (value === validList[i]) {
+    for (let j = 0; j < validList.length; j++) {
+      if (value === validList[j]) {
         return true
       }
     }
@@ -114,4 +111,14 @@ export function oneOf (validList, defaultValue) {
 
 export function getPlainObject (vueObject) {
   return JSON.parse(JSON.stringify(vueObject))
+}
+
+export function contains (root, node) {
+  while (node) {
+    if (node === root) {
+      return true
+    }
+    node = node.parentNode
+  }
+  return false
 }
